@@ -2,13 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCtAQE24TdbolsJnQBvMy2JyxGQxaWB98Q", // double-check
-  authDomain: "dashboard-demo-d6c3f.firebaseapp.com", // ✅ must match Firebase console
-  projectId: "dashboard-demo-d6c3f",
-  storageBucket: "dashboard-demo-d6c3f.appspot.com", // was incorrect earlier
-  messagingSenderId: "151220576868",
-  appId: "1:151220576868:web:2b3209b23a33f898607571",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
